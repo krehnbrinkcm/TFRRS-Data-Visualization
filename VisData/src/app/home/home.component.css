@@ -4,7 +4,15 @@ h1 {
     flex: 1;
     justify-content: center;
     align-items: center;
-    padding-top: 3%;
+    padding-top: 1%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 
