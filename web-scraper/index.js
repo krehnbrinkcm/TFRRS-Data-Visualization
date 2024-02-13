@@ -4,6 +4,8 @@
 const cheerio = require("cheerio")
 const axios = require("axios")
 
+
+
 //scrapes seasons from TFFRS archive 
 async function scrapeSeasons() {
 
@@ -99,6 +101,7 @@ async function scrapeConfs(index) {
 }
 
 //scrapes a season-conference performance list page (Ex. 2023 Outdoor Performance List)
+//current goal - change to scrape just a specific event from a performance list
 async function scrapeConfPerformanceList(link) {
 
     // download conf performance list
@@ -151,5 +154,60 @@ async function scrapeConfPerformanceList(link) {
     console.log(athleteArray)
 }
 
-const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
-scrapeConfPerformanceList(link)
+async function scrapeConfPerformanceListEvent(link,ev) {
+
+    // download conf performance list
+    const axiosResponse = await axios.request({
+        method: "GET",
+        url: link,
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+        }
+    })
+
+    //parse HTML using Cheerio
+    const $ = cheerio.load(axiosResponse.data);
+
+    //array test to scrape names
+    const athleteArray = []
+
+    //fill athlete array
+    $(".panel-body").find(".row:eq(" + ev + ")").each((index, element2) => {
+        const event = $(element2).find(".font-weight-500").text().trim()
+        $(element2).find(".body")
+            .find(".allRows")
+            .each((index, element) => {
+                const rank = $(element).find("td:eq(0)").text().trim();
+                const name = $(element).find("td:eq(1)").text().trim();
+                const year = $(element).find("td:eq(2)").text().trim();
+                const team = $(element).find("td:eq(3)").text().trim();
+                const time = $(element).find("td:eq(4)").text().trim();
+                const meet = $(element).find("td:eq(5)").text().trim();
+                const meetDate = $(element).find("td:eq(6)").text().trim();
+                const wind = $(element).find("td:eq(7)").text().trim();
+
+                const athlete = {
+                    event: event,
+                    rank: rank,
+                    name: name,
+                    year: year,
+                    team: team,
+                    time: time,
+                    meet: meet,
+                    meetDate: meetDate,
+                    wind: wind
+                }
+
+                athleteArray.push(athlete)
+            })
+    })
+
+
+    console.log(athleteArray)
+}
+
+
+//const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
+//scrapeConfPerformanceList(link)
+
+//scrapeConfPerformanceListEvent(link,8)
