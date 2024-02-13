@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ErrorComponent } from './teapot.component';
+import { ErrorComponent } from './error.component';
 
 describe('TeapotComponent', () => {
   let component: ErrorComponent;
