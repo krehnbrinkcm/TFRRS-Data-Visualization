@@ -15,6 +15,6 @@ export class HeaderComponent {
   links = [
     {path: '', name: 'Home'},
     {path: 'athletes', name: 'Search for Athletes'},
-    {path: 'graphs/list', name: 'Visualizer'},
+    {path: 'seasons', name: 'Search for Seasons'},
   ]
 }

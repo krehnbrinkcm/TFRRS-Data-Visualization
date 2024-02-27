@@ -1,0 +1,11 @@
+<div class="seasList">
+    <mat-form-field appearance="fill">
+        <mat-select>
+            <ul class="listSeason">
+                <li *ngFor="let season of seasons" class="seasons">
+                    <mat-option value="season.season">{{season.season}}</mat-option>
+                </li>
+            </ul>
+        </mat-select>
+    </mat-form-field>
+</div>

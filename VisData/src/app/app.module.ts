@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { AppMaterialModule } from './app-material.module';
 import { FormsModule } from '@angular/forms';
+import { SeasonsComponent } from './seasons/seasons.component';
+import { AthleteComponent } from './athlete/athlete.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     ErrorComponent,
+    SeasonsComponent,
+    AthleteComponent,
   ],
   imports: [
     BrowserModule,
