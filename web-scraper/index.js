@@ -154,7 +154,7 @@ async function scrapeConfPerformanceList(link) {
     console.log(athleteArray)
 }
 
-async function scrapeConfPerformanceListEvent(link,ev) {
+async function scrapeConfEvent(link,ev) {
 
     // download conf performance list
     const axiosResponse = await axios.request({
@@ -207,7 +207,20 @@ async function scrapeConfPerformanceListEvent(link,ev) {
 }
 
 
-//const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
-//scrapeConfPerformanceList(link)
 
-//scrapeConfPerformanceListEvent(link,8)
+
+
+
+
+
+
+
+//examples 
+
+//scrapeSeasons()
+
+//scrapeConfs(0)
+
+//const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
+
+//scrapeConfEvent(link, 1)
