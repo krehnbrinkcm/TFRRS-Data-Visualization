@@ -12,7 +12,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: whitesmoke;
+    padding: 0px;
 }
 
 .headerListItem {
@@ -20,13 +20,12 @@
     padding-right: 2%;
     margin-left: 2%;
     margin-right: 2%;
-    color: whitesmoke;
 }
 
 .headerLink {
-    font-size: larger;
+    font-size: large;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: wheat;
+    color: whitesmoke;
 }
 
 .headerLink.active {
