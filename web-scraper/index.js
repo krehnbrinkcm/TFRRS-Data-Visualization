@@ -60,7 +60,7 @@ async function scrapeSeasons() {
             index++;
         })
 
-    console.log(seasonArray) //change to return 
+    return (seasonArray) //change to return 
 }
 
 //scrapes the conferences from each season
@@ -117,7 +117,7 @@ async function scrapeConfs(index) {
             })
         })
 
-    console.log(confArray)
+    return (confArray)
 }
 
 //scrapes a season-conference performance list page (Ex. 2023 Outdoor Performance List)
@@ -232,14 +232,14 @@ async function scrapeConfEvent(link,ev) {
 
 
 
-
-
+export {scrapeSeasons};
+export {scrapeConfs};
 
 //examples 
 
 //scrapeSeasons()
 
-scrapeConfs(4)
+//scrapeConfs(4)
 
 //const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
 
