@@ -4,9 +4,7 @@
 const cheerio = require("cheerio")
 const axios = require("axios")
 
-
-
-//scrapes seasons from TFFRS archive 
+//scrapes seasons from TFFRS archive (index 0 - ...) + the current season (index -1)
 async function scrapeSeasons() {
 
     //get archives page
@@ -34,6 +32,28 @@ async function scrapeSeasons() {
             const seasonObj = {
                 season: season,
                 index: index
+            }
+
+            if (index == 0) {
+
+                var year = parseInt((seasonObj.season.substring(0,4)));
+
+                if (seasonObj.season.endsWith("OUTDOOR")) {
+                    year++;
+                    seas = "INDOOR"
+                    seasString = year + " " + seas
+                }
+
+                else {
+                    seas = "OUTDOOR"
+                    seasString = year + " " + seas;
+                }
+
+                const curObj = {
+                    season: seasString,
+                    index: -1
+                }
+                seasonArray.push(curObj)
             }
 
             seasonArray.push(seasonObj)
@@ -219,7 +239,7 @@ async function scrapeConfEvent(link,ev) {
 
 //scrapeSeasons()
 
-//scrapeConfs(0)
+scrapeConfs(4)
 
 //const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
 
