@@ -1,8 +1,19 @@
 .seasList {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     padding-top: 2%;
     font-size: large;
+}
+
+ul{
+    list-style-type: none;
+    padding : 0;
+    margin : 0;
+}
+
+mat-form-field {
+    padding-left: 7px;
+    padding-right: 7px;
 }
