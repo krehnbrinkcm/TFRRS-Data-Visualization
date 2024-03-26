@@ -1,8 +1,8 @@
 //index.js
 
 //import cheerio and axios
-const cheerio = require("cheerio")
-const axios = require("axios")
+import cheerio from 'cheerio'
+import axios from 'axios'
 
 //scrapes seasons from TFFRS archive (index 0 - ...) + the current season (index -1)
 async function scrapeSeasons() {
