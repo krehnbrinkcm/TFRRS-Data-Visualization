@@ -30,6 +30,11 @@ mat-form-field {
     clear: both;
   }
 
-  .chart {
+  .left {
+    width: 40%;
+  }
+
+  .right {
+    width: 60%;
     padding-top: 60px;
   }
