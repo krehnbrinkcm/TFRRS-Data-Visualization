@@ -36,7 +36,19 @@
         </mat-select>
     </mat-form-field>
 
-
+    <ngx-charts-bar-vertical 
+    [view]="[700,300]"
+    [results]="dataset"
+    [xAxisLabel]="'x-axis'"
+    [legendTitle]="'legend'"
+    [yAxisLabel]="'y-axis'"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [gradient]="true">
+    </ngx-charts-bar-vertical>
 
 
 </div>

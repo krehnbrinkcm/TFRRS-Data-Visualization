@@ -105,7 +105,7 @@ async function scrapeConfs(index) {
         .each((index, element) => {
             $(element).find("li").each((index, element2) => {
 
-                var conf = $(element2).find("a").text()
+                var conf = $(element2).find("a").text().replace('data-','');
                 var link = $(element2).find("a").attr("href")
 
                 const confObj = {

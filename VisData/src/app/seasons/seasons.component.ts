@@ -24,6 +24,12 @@ export class SeasonsComponent {
   //   })
   // }
 
+
+  dataset = [
+    { name: "X", value: 1 },
+    { name: "Y", value: 2 }
+  ];
+
   seasons = [
     { season: '2024 INDOOR', index: -1 },
     { season: '2023 OUTDOOR', index: 0 },

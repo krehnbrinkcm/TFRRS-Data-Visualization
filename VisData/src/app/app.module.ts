@@ -11,6 +11,7 @@ import { AppMaterialModule } from './app-material.module';
 import { FormsModule } from '@angular/forms';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { AthleteComponent } from './athlete/athlete.component';
+import { NgxChartsModule }from '@swimlane/ngx-charts';  // added
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AthleteComponent } from './athlete/athlete.component';
     AppMaterialModule,
     FormsModule,
     BrowserAnimationsModule,
+    NgxChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
