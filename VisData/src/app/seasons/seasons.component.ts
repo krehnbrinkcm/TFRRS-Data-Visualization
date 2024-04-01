@@ -38,85 +38,17 @@ export class SeasonsComponent {
     return [dataset];
 }
 
-
-  
-  // dataset = [
-  //   {
-  //     "name": "Germany",
-  //     "series": [
-  //       {
-  //         "name": "1990",
-  //         "value": 62000000
-  //       },
-  //       {
-  //         "name": "2010",
-  //         "value": 73000000
-  //       },
-  //       {
-  //         "name": "2011",
-  //         "value": 89400000
-  //       }
-  //     ]
-  //   },
-  
-  //   {
-  //     "name": "USA",
-  //     "series": [
-  //       {
-  //         "name": "1990",
-  //         "value": 250000000
-  //       },
-  //       {
-  //         "name": "2010",
-  //         "value": 309000000
-  //       },
-  //       {
-  //         "name": "2011",
-  //         "value": 311000000
-  //       }
-  //     ]
-  //   },
-  
-  //   {
-  //     "name": "France",
-  //     "series": [
-  //       {
-  //         "name": "1990",
-  //         "value": 58000000
-  //       },
-  //       {
-  //         "name": "2010",
-  //         "value": 50000020
-  //       },
-  //       {
-  //         "name": "2011",
-  //         "value": 58000000
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     "name": "UK",
-  //     "series": [
-  //       {
-  //         "name": "1990",
-  //         "value": 57000000
-  //       },
-  //       {
-  //         "name": "2010",
-  //         "value": 62000000
-  //       }
-  //     ]
-  //   }
-  // ]
-
   data2 = [
     {
+      name: "Big East Men 100 Meter Dash",
+      series: [
+      {
       event: '100 Meters\n        (Men)',
       rank: '1',
       name: 'Kwaateng, Richmond',
       year: 'SO-2',
       team: 'Connecticut',
-      time: '10.30',
+      value: '10.30',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '2.7'
@@ -127,7 +59,7 @@ export class SeasonsComponent {
       name: "O'Brien, Joseph",
       year: 'SO-2',
       team: 'Connecticut',
-      time: '10.40',
+      value: '10.40',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '1.2'
@@ -138,7 +70,7 @@ export class SeasonsComponent {
       name: 'Paige, Joshua',
       year: 'SO-2',
       team: 'Georgetown',
-      time: '10.45',
+      value: '10.45',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '1.2'
@@ -149,7 +81,7 @@ export class SeasonsComponent {
       name: 'Attucks, Cameron',
       year: 'SO-2',
       team: 'DePaul',
-      time: '10.56',
+      value: '10.56',
       meet: 'Gibson Invitational',
       meetDate: 'Apr 21, 2022',
       wind: '3.9'
@@ -160,7 +92,7 @@ export class SeasonsComponent {
       name: 'Hackett, Aaron',
       year: 'JR-3',
       team: 'Connecticut',
-      time: '10.62',
+      value: '10.62',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '2.7'
@@ -171,7 +103,7 @@ export class SeasonsComponent {
       name: 'Kane, Isaac',
       year: 'SO-2',
       team: 'Butler',
-      time: '10.62',
+      value: '10.62',
       meet: '2022 Indiana Invitational',
       meetDate: 'Apr 22, 2022',
       wind: '3.8'
@@ -182,7 +114,7 @@ export class SeasonsComponent {
       name: 'Marshall, Myles',
       year: 'SO-2',
       team: 'DePaul',
-      time: '10.65',
+      value: '10.65',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '2.7'
@@ -193,7 +125,7 @@ export class SeasonsComponent {
       name: 'Thompson, Josiah',
       year: 'JR-3',
       team: 'Connecticut',
-      time: '10.68',
+      value: '10.68',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '1.2'
@@ -204,7 +136,7 @@ export class SeasonsComponent {
       name: 'Cole, Dominic',
       year: 'FR-1',
       team: 'DePaul',
-      time: '10.69',
+      value: '10.69',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '2.7'
@@ -215,7 +147,7 @@ export class SeasonsComponent {
       name: 'Pitt, Christopher',
       year: 'SO-2',
       team: 'Georgetown',
-      time: '10.71',
+      value: '10.71',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '1.2'
@@ -226,7 +158,7 @@ export class SeasonsComponent {
       name: 'Bradley, Ben',
       year: 'FR-1',
       team: 'Butler',
-      time: '10.77',
+      value: '10.77',
       meet: 'Sycamore Open',
       meetDate: 'Apr 30, 2022',
       wind: '3.9'
@@ -237,7 +169,7 @@ export class SeasonsComponent {
       name: 'Mahony, Conor',
       year: 'SO-2',
       team: 'Connecticut',
-      time: '10.80',
+      value: '10.80',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '2.7'
@@ -248,7 +180,7 @@ export class SeasonsComponent {
       name: 'Torney, Jordan',
       year: 'SR-4',
       team: 'Connecticut',
-      time: '10.93',
+      value: '10.93',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '0.6'
@@ -259,7 +191,7 @@ export class SeasonsComponent {
       name: 'Bennett, Lee',
       year: 'SO-2',
       team: 'Xavier (Ohio)',
-      time: '10.97',
+      value: '10.97',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '1.2'
@@ -270,7 +202,7 @@ export class SeasonsComponent {
       name: 'Elder, Jack',
       year: 'SO-2',
       team: 'Butler',
-      time: '11.00',
+      value: '11.00',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '0.6'
@@ -281,7 +213,7 @@ export class SeasonsComponent {
       name: 'Troup, Michael',
       year: 'SR-4',
       team: 'Villanova',
-      time: '11.00',
+      value: '11.00',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '2.7'
@@ -292,7 +224,7 @@ export class SeasonsComponent {
       name: 'Debelak, Zach',
       year: 'JR-3',
       team: 'DePaul',
-      time: '11.03',
+      value: '11.03',
       meet: 'Gibson Invitational',
       meetDate: 'Apr 21, 2022',
       wind: '4.0'
@@ -303,7 +235,7 @@ export class SeasonsComponent {
       name: 'Bendel, Daniel',
       year: 'SR-4',
       team: 'Marquette',
-      time: '11.04',
+      value: '11.04',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '2.7'
@@ -314,7 +246,7 @@ export class SeasonsComponent {
       name: 'Wright, Julian',
       year: 'SO-2',
       team: 'Marquette',
-      time: '11.06',
+      value: '11.06',
       meet: 'Pacific Coast Invitational 2022',
       meetDate: 'Apr 14, 2022',
       wind: '3.5'
@@ -325,7 +257,7 @@ export class SeasonsComponent {
       name: 'Grosse, Benjamin',
       year: 'SR-4',
       team: 'Connecticut',
-      time: '11.16',
+      value: '11.16',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '0.6'
@@ -336,7 +268,7 @@ export class SeasonsComponent {
       name: 'Johnson, Jeremy',
       year: 'SR-4',
       team: 'Xavier (Ohio)',
-      time: '11.36',
+      value: '11.36',
       meet: 'Jesse Owens Track Classic',
       meetDate: 'Apr 22, 2022',
       wind: '-1.0'
@@ -347,7 +279,7 @@ export class SeasonsComponent {
       name: 'Heller, Brady',
       year: 'JR-3',
       team: 'Marquette',
-      time: '11.42',
+      value: '11.42',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '0.6'
@@ -358,7 +290,7 @@ export class SeasonsComponent {
       name: 'Williams, Julian',
       year: 'FR-1',
       team: 'Georgetown',
-      time: '11.42',
+      value: '11.42',
       meet: 'Virginia Challenge',
       meetDate: 'Apr 22, 2022',
       wind: '-1.7'
@@ -369,7 +301,7 @@ export class SeasonsComponent {
       name: 'Werven, Simon',
       year: 'SO-2',
       team: 'Marquette',
-      time: '11.44',
+      value: '11.44',
       meet: 'BIG EAST Outdoor Track & Field Championships',
       meetDate: 'May 13, 2022',
       wind: '0.6'
@@ -380,12 +312,15 @@ export class SeasonsComponent {
       name: 'Nations, Gus',
       year: 'JR-3',
       team: 'Xavier (Ohio)',
-      time: '11.46',
+      value: '11.46',
       meet: 'Jesse Owens Track Classic',
       meetDate: 'Apr 22, 2022',
       wind: '3.0'
     }
   ]
+}
+]
+
 
   dataset = this.convertDataToDataset(this.data2)
 
