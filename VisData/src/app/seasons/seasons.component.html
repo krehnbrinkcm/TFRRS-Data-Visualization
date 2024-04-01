@@ -1,4 +1,6 @@
 <div class="seasList">
+<div class = "row">
+<div class = "column">
 
 
     <mat-form-field appearance="fill">
@@ -35,8 +37,10 @@
             </ul>
         </mat-select>
     </mat-form-field>
+</div>
 
-    <ngx-charts-bar-vertical 
+<div class = "column chart">
+    <ngx-charts-line-chart 
     [view]="[700,300]"
     [results]="dataset"
     [xAxisLabel]="'x-axis'"
@@ -48,7 +52,8 @@
     [xAxis]="true"
     [yAxis]="true"
     [gradient]="true">
-    </ngx-charts-bar-vertical>
+    </ngx-charts-line-chart>
 
-
+</div>
+</div>
 </div>
