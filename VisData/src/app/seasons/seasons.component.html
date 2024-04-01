@@ -1,6 +1,6 @@
 <div class="seasList">
 <div class = "row">
-<div class = "column">
+<div class = "column left">
 
 
     <mat-form-field appearance="fill">
@@ -39,14 +39,14 @@
     </mat-form-field>
 </div>
 
-<div class = "column chart">
+<div class = "column right">
     <ngx-charts-line-chart 
     [view]="[700,300]"
     [results]="data2"
     [xAxisLabel]="'x-axis'"
     [legendTitle]="'legend'"
     [yAxisLabel]="'y-axis'"
-    [legend]="true"
+    [legend]="false"
     [showXAxisLabel]="true"
     [showYAxisLabel]="true"
     [xAxis]="true"
