@@ -35,6 +35,10 @@ mat-form-field {
   }
 
   .right {
-    width: 60%;
+    width: 58%;
     padding-top: 60px;
+  }
+
+  mat-card {
+    background-color: #F3EDC8;
   }

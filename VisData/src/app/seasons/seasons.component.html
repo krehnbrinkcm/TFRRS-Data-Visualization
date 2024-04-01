@@ -31,8 +31,8 @@
         <mat-label>Select Event</mat-label>
         <mat-select>
             <ul class="listSeason">
-                <li *ngFor="let conf of confs" class="seasons">
-                    <mat-option value="conf.conf">{{conf.conf}}</mat-option>
+                <li *ngFor="let ev of events" class="seasons">
+                    <mat-option value="ev.ev">{{ev}}</mat-option>
                 </li>
             </ul>
         </mat-select>
@@ -40,19 +40,24 @@
 </div>
 
 <div class = "column right">
+    <mat-card>
     <ngx-charts-line-chart 
     [view]="[700,300]"
     [results]="data2"
-    [xAxisLabel]="'x-axis'"
+    [xAxisLabel]="'Athlete'"
     [legendTitle]="'legend'"
-    [yAxisLabel]="'y-axis'"
+    [yAxisLabel]="'Time'"
     [legend]="false"
     [showXAxisLabel]="true"
     [showYAxisLabel]="true"
     [xAxis]="true"
     [yAxis]="true"
-    [gradient]="true">
+    [gradient]="true"
+    [autoScale] = "true"
+    [roundDomains]="true">
+    
     </ngx-charts-line-chart>
+</mat-card>
 
 </div>
 </div>

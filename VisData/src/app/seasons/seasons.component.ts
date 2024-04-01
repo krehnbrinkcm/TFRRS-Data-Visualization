@@ -356,6 +356,38 @@ export class SeasonsComponent {
     { season: '2010 INDOOR', index: 27 }
   ]
 
+   events = [
+    "60 meters",
+    "100 meters",
+    "200 meters",
+    "400 meters",
+    "800 meters",
+    "1500 meters",
+    "3000 meters",
+    "5000 meters",
+    "10,000 meters",
+    "60-meter hurdles",
+    "100-meter hurdles",
+    "110-meter hurdles",
+    "400-meter hurdles",
+    "3000 meters steeplechase",
+    "4x100 meters relay",
+    "4x400 meters relay",
+    "20 kilometers race walk",
+    "50 kilometers race walk",
+    "High jump",
+    "Pole vault",
+    "Long jump",
+    "Triple jump",
+    "Shot put",
+    "Discus throw",
+    "Hammer throw",
+    "Javelin throw",
+    "Decathlon (men)",
+    "Heptathlon (women)"
+];
+
+
   confs = [
     {
       conf: 'Div. I Combined List',
