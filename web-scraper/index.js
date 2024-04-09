@@ -232,7 +232,7 @@ async function scrapeConfEvent(link,ev) {
 
 
 
-export {scrapeSeasons};
+export default {scrapeSeasons};
 export {scrapeConfs};
 
 //examples 
