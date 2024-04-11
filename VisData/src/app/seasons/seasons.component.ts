@@ -1,6 +1,8 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { SeasonService } from './season.service';
+import { LegendPosition } from '@swimlane/ngx-charts';
+
 
 @Injectable()
 
@@ -11,7 +13,25 @@ import { SeasonService } from './season.service';
 })
 
 export class SeasonsComponent {
+
+  legendPosition: LegendPosition = LegendPosition.Below;
   //seasons:any[] = [];
+
+  onSeasonSelectionChange(event: any) {
+    console.log('Selected season:', event.value);
+    // Handle the selected season value
+}
+
+onConferenceSelectionChange(event: any) {
+    console.log('Selected conference:', event.value);
+    // Handle the selected conference value
+}
+
+onEventSelectionChange(event: any) {
+    console.log('Selected event:', event.value);
+    // Handle the selected event value
+}
+
 
   constructor(private service: SeasonService){}
 

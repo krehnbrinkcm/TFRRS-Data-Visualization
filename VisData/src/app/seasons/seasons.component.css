@@ -41,4 +41,10 @@ mat-form-field {
 
   mat-card {
     background-color: #F3EDC8;
+    width: fit-content;
   }
+
+  .bg {
+    background-color: #EAD196;
+  }
+

@@ -13,6 +13,7 @@ import { SeasonsComponent } from './seasons/seasons.component';
 import { AthleteComponent } from './athlete/athlete.component';
 import { NgxChartsModule }from '@swimlane/ngx-charts';  // added
 import {MatCardModule} from '@angular/material/card';
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
     BrowserAnimationsModule,
     NgxChartsModule,
     MatCardModule,
+    MatStepperModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

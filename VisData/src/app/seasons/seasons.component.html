@@ -2,41 +2,42 @@
 <div class = "row">
 <div class = "column left">
 
-
-    <mat-form-field appearance="fill">
-        <mat-label>Select Season</mat-label>
-        <mat-select>
-            <ul class="listSeason">
-                <li *ngFor="let season of seasons" class="seasons">
-                    <mat-option value="season.season">{{season.season}}</mat-option>
-                </li>
-            </ul>
-        </mat-select>
-    </mat-form-field>
-
-
-    <mat-form-field appearance="fill">
-        <mat-label>Select Conference</mat-label>
-        <mat-select>
-            <ul class="listSeason">
-                <li *ngFor="let conf of confs" class="seasons">
-                    <mat-option value="conf.conf">{{conf.conf}}</mat-option>
-                </li>
-            </ul>
-        </mat-select>
-    </mat-form-field>
-
-
-    <mat-form-field appearance="fill">
-        <mat-label>Select Event</mat-label>
-        <mat-select>
-            <ul class="listSeason">
-                <li *ngFor="let ev of events" class="seasons">
-                    <mat-option value="ev.ev">{{ev}}</mat-option>
-                </li>
-            </ul>
-        </mat-select>
-    </mat-form-field>
+    <mat-stepper orientation="vertical" class="bg">
+        <mat-step>
+          <ng-template matStepLabel>Step 1</ng-template>
+          <ng-template matStepContent>
+            <mat-form-field appearance="fill">
+                <mat-label>Select Season</mat-label>
+                <mat-select (selectionChange)="onSeasonSelectionChange($event)">
+                    <mat-option *ngFor="let season of seasons" [value]="season.season">{{ season.season }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-button matStepperNext>Next</button>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Step 2</ng-template>
+          <ng-template matStepContent>
+            <mat-form-field appearance="fill">
+                <mat-label>Select Conference</mat-label>
+                <mat-select (selectionChange)="onConferenceSelectionChange($event)">
+                    <mat-option *ngFor="let conf of confs" [value]="conf.conf">{{ conf.conf }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Step 3</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Select Event</mat-label>
+            <mat-select (selectionChange)="onEventSelectionChange($event)">
+                <mat-option *ngFor="let ev of events" [value]="ev">{{ ev }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        </mat-step>
+    </mat-stepper>
 </div>
 
 <div class = "column right">
@@ -45,9 +46,10 @@
     [view]="[700,300]"
     [results]="data2"
     [xAxisLabel]="'Athlete'"
-    [legendTitle]="'legend'"
+    [legendTitle]="''"
     [yAxisLabel]="'Time'"
-    [legend]="false"
+    [legend]="true"
+    [legendPosition]="legendPosition"
     [showXAxisLabel]="true"
     [showYAxisLabel]="true"
     [xAxis]="true"
@@ -55,7 +57,6 @@
     [gradient]="true"
     [autoScale] = "true"
     [roundDomains]="true">
-    
     </ngx-charts-line-chart>
 </mat-card>
 
