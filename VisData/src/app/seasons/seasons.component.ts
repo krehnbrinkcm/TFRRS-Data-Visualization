@@ -2,6 +2,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { SeasonService } from './season.service';
 import { LegendPosition } from '@swimlane/ngx-charts';
+import { MatStepper } from '@angular/material/stepper';
 
 
 @Injectable()
@@ -14,35 +15,31 @@ import { LegendPosition } from '@swimlane/ngx-charts';
 
 export class SeasonsComponent {
 
-  legendPosition: LegendPosition = LegendPosition.Below;
-  //seasons:any[] = [];
+  dataset = []
+  //dataset = this.convertDataToDataset(this.data2)
+  
 
-  onSeasonSelectionChange(event: any) {
+
+  legendPosition: LegendPosition = LegendPosition.Below;
+
+  onSeasonSelectionChange(event: any, stepper: MatStepper) {
     console.log('Selected season:', event.value);
-    // Handle the selected season value
+    stepper.next();
 }
 
-onConferenceSelectionChange(event: any) {
+onConferenceSelectionChange(event: any, stepper: MatStepper) {
     console.log('Selected conference:', event.value);
-    // Handle the selected conference value
+    stepper.next();
 }
 
 onEventSelectionChange(event: any) {
     console.log('Selected event:', event.value);
-    // Handle the selected event value
 }
 
 
   constructor(private service: SeasonService){}
 
-  // ngOnInit(){
-  //   this.service.getSeasons().subscribe((data) => {
-  //     this.seasons = data;
-  //   },
-  //   (err) => {
-  //     console.error('Error in fetching season data: ',err);
-  //   })
-  // }
+
 
   convertDataToDataset(data: any): { name: string; series: any }[] {
     const dataset = {
@@ -50,7 +47,7 @@ onEventSelectionChange(event: any) {
         series: data.map((record: any) => {
             return {
                 name: record.name,
-                value: parseFloat(record.time)
+                value: record.value
             };
         })
     };
@@ -342,7 +339,6 @@ onEventSelectionChange(event: any) {
 ]
 
 
-  dataset = this.convertDataToDataset(this.data2)
 
   seasons = [
     { season: '2024 INDOOR', index: -1 },
