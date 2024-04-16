@@ -1,8 +1,13 @@
 import { NextFunction, Request, Response } from "express";
 import Season from '../models/season.model'
 import Scraper from '../../../web-scraper/index.js'
+import fs from 'fs'
 
 export default class ApiCtrl {
+
+    private path = "../../../web-scraper/index.js";
+
+    private scrapedSeasons: Array<Season> | undefined;
 
     base = (req: Request, res: Response, next: NextFunction) => {
         res.status(200).json({
@@ -11,15 +16,15 @@ export default class ApiCtrl {
     }
 
     getSeasons = async (req: Request, res: Response, next: NextFunction) => {
-        let myPromise: Promise<any[]> = Scraper.scrapeSeasons();
+        let myPromise = Scraper.scrapeSeasons() || undefined;
         myPromise.then(
-            (seasArr) => {
+            (seasArr:Array<Season>) => {
                 if(seasArr === undefined) {
-                    seasArr = [];
+                    seasArr = [{season: "missing", index: -1}];
                 }
                 res.status(201).json({seasons: seasArr});
-            },
-            (err) => {res.status(400), err}
+            }).catch(
+            (err:Error) => {res.status(400), err}
         )
     }
 }
