@@ -11,11 +11,15 @@ export default class ApiCtrl {
     }
 
     getSeasons = async (req: Request, res: Response, next: NextFunction) => {
-        let seasArr: Array<Season> = [];
-        seasArr = Scraper.getSeasons();
-        if(seasArr === undefined) {
-            seasArr = [];
-        }
-        res.status(201).json({seasons: seasArr});
+        let myPromise: Promise<any[]> = Scraper.scrapeSeasons();
+        myPromise.then(
+            (seasArr) => {
+                if(seasArr === undefined) {
+                    seasArr = [];
+                }
+                res.status(201).json({seasons: seasArr});
+            },
+            (err) => {res.status(400), err}
+        )
     }
 }
