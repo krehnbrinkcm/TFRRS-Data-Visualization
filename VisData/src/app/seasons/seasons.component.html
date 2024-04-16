@@ -23,19 +23,21 @@
                     <mat-option *ngFor="let conf of confs" [value]="conf.conf">{{ conf.conf }}</mat-option>
                 </mat-select>
             </mat-form-field>
-            <button mat-button matStepperPrevious>Back</button>
           </ng-template>
         </mat-step>
         <mat-step>
           <ng-template matStepLabel>Select Event</ng-template>
           <mat-form-field appearance="fill">
             <mat-label>Select Event</mat-label>
-            <mat-select (selectionChange)="onEventSelectionChange($event)">
+            <mat-select (selectionChange)="onEventSelectionChange($event, stepper)">
                 <mat-option *ngFor="let ev of events" [value]="ev">{{ ev }}</mat-option>
             </mat-select>
         </mat-form-field>
         </mat-step>
     </mat-stepper>
+    <div class = "button" *ngIf="selectionsMade()">
+    <button mat-flat-button (click) = "addToDataset()">Add</button>
+  </div>
 </div>
 
 <div class = "column right">

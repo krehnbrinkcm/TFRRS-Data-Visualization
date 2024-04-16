@@ -1,7 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { SeasonService } from './season.service';
-import { LegendPosition } from '@swimlane/ngx-charts';
+import { LegendPosition, TreeMapModule } from '@swimlane/ngx-charts';
 import { MatStepper } from '@angular/material/stepper';
 
 
@@ -16,28 +16,42 @@ import { MatStepper } from '@angular/material/stepper';
 export class SeasonsComponent {
 
   dataset = []
+  seasonVar = ""
+  conferenceVar = ""
+  eventVar = ""
+
   //dataset = this.convertDataToDataset(this.data2)
   
-
-
   legendPosition: LegendPosition = LegendPosition.Below;
 
   onSeasonSelectionChange(event: any, stepper: MatStepper) {
-    console.log('Selected season:', event.value);
+    this.seasonVar = event.value;
+    console.log(event.value)
     stepper.next();
 }
 
 onConferenceSelectionChange(event: any, stepper: MatStepper) {
-    console.log('Selected conference:', event.value);
+    this.conferenceVar = event.value;
     stepper.next();
 }
 
-onEventSelectionChange(event: any) {
-    console.log('Selected event:', event.value);
+onEventSelectionChange(event: any, stepper: MatStepper) {
+    this.eventVar = event.value;
+    stepper.next();
 }
 
 
   constructor(private service: SeasonService){}
+
+  selectionsMade (){
+    if (this.seasonVar != "" &&  this.conferenceVar != "" && this.eventVar != "")
+      return true;
+    return false;
+  }
+
+  addToDataset() {
+    console.log("works")
+  }
 
 
 

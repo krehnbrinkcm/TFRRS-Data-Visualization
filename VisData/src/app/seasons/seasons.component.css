@@ -32,6 +32,7 @@ mat-form-field {
 
   .left {
     width: 40%;
+    padding-right: 10px;
   }
 
   .right {
@@ -48,3 +49,7 @@ mat-form-field {
     background-color: #EAD196;
   }
 
+.button {
+  margin: auto;
+  width: 50%;
+}
