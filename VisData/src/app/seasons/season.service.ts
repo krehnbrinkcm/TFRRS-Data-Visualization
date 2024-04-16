@@ -18,7 +18,7 @@ export class SeasonService {
 
     constructor(){}
 
-    getSeasons(): Observable<any[]> {
-        return from(scraperFunctions.scrapeSeasons());
-    }
+    //getSeasons(): Observable<any[]> {
+        //return from(scraperFunctions.scrapeSeasons());
+    //}
 }
