@@ -3,6 +3,7 @@ import { NgForm } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, from } from "rxjs";
 import * as  scraperFunctions from '../../../../web-scraper/index.js'
+import Confs from '../../../../web-scraper/confs'
 
 export interface seasonObj {
     season: string,
@@ -14,16 +15,77 @@ export interface seasonObj {
 @Injectable({providedIn: 'root',})
 
 export class SeasonService {
-    static setData(): never[] {
-      throw new Error('Method not implemented.');
-    }
+    
     seasons:Array<seasonObj> = [];
 
-    constructor(){}
+    constructor(private confs: Confs){}
 
     //getSeasons(): Observable<any[]> {
         //return from(scraperFunctions.scrapeSeasons());
     //}
+
+    getConf(index: number){
+        if(index === -1){
+            return this.confs.arr0neg1();
+        } else if (index === 0){
+            return this.confs.arr00();
+        } else if (index === 1){
+            return this.confs.arr01();
+        } else if (index === 2){
+            return this.confs.arr02();
+        } else if (index === 3){
+            return this.confs.arr03();
+        } else if (index === 4){
+            return this.confs.arr04();
+        } else if (index === 5){
+            return this.confs.arr05();
+        } else if (index === 6){
+            return this.confs.arr06();
+        } else if (index === 7){
+            return this.confs.arr07();
+        } else if (index === 8){
+            return this.confs.arr08();
+        } else if (index === 9){
+            return this.confs.arr09();
+        } else if (index === 10){
+            return this.confs.arr010();
+        } else if (index === 11){
+            return this.confs.arr011();
+        } else if (index === 12){
+            return this.confs.arr012();
+        } else if (index === 13) {
+            return this.confs.arr013();
+        } else if (index === 14){
+            return this.confs.arr014();
+        } else if (index === 15){
+            return this.confs.arr015();
+        } else if (index === 16){
+            return this.confs.arr016();
+        } else if (index === 17){
+            return this.confs.arr017();
+        } else if (index === 18){
+            return this.confs.arr018();
+        } else if (index === 19){
+            return this.confs.arr019();
+        } else if (index === 20){
+            return this.confs.arr020();
+        } else if (index === 21){
+            return this.confs.arr021();
+        } else if (index === 22){
+            return this.confs.arr022();
+        } else if (index === 23){
+            return this.confs.arr023();
+        } else if (index === 24){
+            return this.confs.arr024();
+        } else if (index === 25){
+            return this.confs.arr025();
+        } else if (index === 26){
+            return this.confs.arr026();
+        } else if (index === 27){
+            return this.confs.arr027();
+        }
+        return {};
+    }
 
     setEventData() {
         let data2 = [
