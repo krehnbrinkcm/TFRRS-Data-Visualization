@@ -1,8 +1,8 @@
-//index.js
+//importing cheerio and axios
 
-//import cheerio and axios
-import cheerio from 'cheerio'
-import axios from 'axios'
+const cheerio = require("cheerio")
+const axios = require("axios")
+
 
 //scrapes seasons from TFFRS archive (index 0 - ...) + the current season (index -1)
 async function scrapeSeasons() {
@@ -60,7 +60,7 @@ async function scrapeSeasons() {
             index++;
         })
 
-    return (seasonArray) //change to return 
+    console.log (seasonArray) //change to return 
 }
 
 //scrapes the conferences from each season
@@ -116,8 +116,9 @@ async function scrapeConfs(index) {
                 confArray.push(confObj)
             })
         })
+        console.log("const arr" + index + " = ")
+    console.log (JSON.stringify(confArray, null, 2))
 
-    return (confArray)
 }
 
 //scrapes a season-conference performance list page (Ex. 2023 Outdoor Performance List)
@@ -227,20 +228,16 @@ async function scrapeConfEvent(link,ev) {
 }
 
 
-
-
-
-
-
-export default {scrapeSeasons};
-export {scrapeConfs};
-
-//examples 
+//examples
 
 //scrapeSeasons()
 
 //scrapeConfs(4)
 
+for (let i = -1; i < 28; i++) {
+    scrapeConfs(i)
+}
+
 //const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
 
-//scrapeConfEvent(link, 1)
+//scrapeConfPerformanceList(link)
