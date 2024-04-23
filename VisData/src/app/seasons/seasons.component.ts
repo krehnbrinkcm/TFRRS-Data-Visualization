@@ -3,7 +3,7 @@ import { Observable, from } from 'rxjs';
 import { SeasonService } from './season.service';
 import { LegendPosition } from '@swimlane/ngx-charts';
 import { MatStepper } from '@angular/material/stepper';
-
+import Scraper from '../../../../web-scraper/index.js'
 
 @Injectable()
 
@@ -13,12 +13,22 @@ import { MatStepper } from '@angular/material/stepper';
   styleUrl: './seasons.component.css'
 })
 
-export class SeasonsComponent {
+export class SeasonsComponent implements OnInit{
 
-  dataset = []
+  dataset = [];
+  seasArr = [];
   //dataset = this.convertDataToDataset(this.data2)
   
 
+  ngOnInit(): void {
+    Scraper.scrapeSeasons();
+    let seasString = localStorage.getItem("seasons");
+
+    if(seasString){
+      this.seasArr = JSON.parse(seasString);
+      this.seasons = this.seasArr;
+    }
+  }
 
   legendPosition: LegendPosition = LegendPosition.Below;
 
@@ -341,7 +351,7 @@ onEventSelectionChange(event: any) {
 
 
   seasons = [
-    { season: '2024 INDOOR', index: -1 },
+    //{ season: '2024 INDOOR', index: -1 },
     { season: '2023 OUTDOOR', index: 0 },
     { season: '2023 INDOOR', index: 1 },
     { season: '2022 OUTDOOR', index: 2 },
@@ -358,7 +368,7 @@ onEventSelectionChange(event: any) {
     { season: '2017 INDOOR', index: 13 },
     { season: '2016 OUTDOOR', index: 14 },
     { season: '2016 INDOOR', index: 15 },
-    { season: '2015 OUTDOOR', index: 16 },
+    //{ season: '2015 OUTDOOR', index: 16 },
     { season: '2015 INDOOR', index: 17 },
     { season: '2014 OUTDOOR', index: 18 },
     { season: '2014 INDOOR', index: 19 },
