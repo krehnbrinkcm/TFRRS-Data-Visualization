@@ -40,13 +40,13 @@ async function scrapeSeasons() {
 
                 if (seasonObj.season.endsWith("OUTDOOR")) {
                     year++;
-                    seas = "INDOOR"
-                    seasString = year + " " + seas
+                    var seas = "INDOOR"
+                    var seasString = year + " " + seas
                 }
 
                 else {
-                    seas = "OUTDOOR"
-                    seasString = year + " " + seas;
+                    var seas = "OUTDOOR"
+                    var seasString = year + " " + seas;
                 }
 
                 const curObj = {
@@ -59,8 +59,9 @@ async function scrapeSeasons() {
             seasonArray.push(seasonObj)
             index++;
         })
-
-    return (seasonArray) //change to return 
+    
+        localStorage.setItem("seasons", JSON.stringify(seasonArray));
+    return 1//change to return 
 }
 
 //scrapes the conferences from each season
