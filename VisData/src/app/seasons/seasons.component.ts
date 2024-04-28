@@ -33,7 +33,7 @@ export class SeasonsComponent implements OnInit{
     }
     this.data2 = this.service.setEventData();
     this.seasons = this.service.setSeasons();
-    this.confs = this.service.setConfs();
+    //this.confs = this.service.setConfs();
     this.events = this.service.setEvents();
   }
 
@@ -48,17 +48,22 @@ export class SeasonsComponent implements OnInit{
 
   onSeasonSelectionChange(event: any, stepper: MatStepper) {
     this.seasonVar = event.value;
-    console.log(event.value)
+    //console.log(event.value);
+    this.confs = this.service.getConf(event.value);
+    this.selectionsMade();
     stepper.next();
 }
 
 onConferenceSelectionChange(event: any, stepper: MatStepper) {
     this.conferenceVar = event.value;
+    console.log(event.value);
+    this.selectionsMade();
     stepper.next();
 }
 
 onEventSelectionChange(event: any, stepper: MatStepper) {
     this.eventVar = event.value;
+    this.selectionsMade();
     stepper.next();
 }
 

@@ -18,11 +18,13 @@ export class SeasonService {
     
     seasons:Array<seasonObj> = [];
 
-    constructor(private confs: Confs){}
+    constructor(){}
 
     //getSeasons(): Observable<any[]> {
         //return from(scraperFunctions.scrapeSeasons());
     //}
+
+    confs = new Confs();
 
     getConf(index: number){
         if(index === -1){
@@ -81,10 +83,9 @@ export class SeasonService {
             return this.confs.arr025();
         } else if (index === 26){
             return this.confs.arr026();
-        } else if (index === 27){
+        } else {
             return this.confs.arr027();
         }
-        return {};
     }
 
     setEventData() {
