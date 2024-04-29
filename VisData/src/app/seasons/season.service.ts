@@ -95,12 +95,13 @@ export class SeasonService {
           return this.events.httpstftfrrsorglists3857BIG_EAST_Outdoor_Performance_List1();
       } 
        else {
+        console.log("ELSEELSEELSEELSE");
           return this.events.httpstftfrrsorglists3857BIG_EAST_Outdoor_Performance_List1();;
       }
   }
 
     setEventData() {
-        let data2 = [
+        let dataset = [
             {
               name: "Big East Men 100 Meter Dash",
               series: [
@@ -110,7 +111,7 @@ export class SeasonService {
               name: 'Kwaateng, Richmond',
               year: 'SO-2',
               team: 'Connecticut',
-              value: '10.30',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '2.7'
@@ -143,7 +144,7 @@ export class SeasonService {
               name: 'Attucks, Cameron',
               year: 'SO-2',
               team: 'DePaul',
-              value: '10.56',
+              value: '0',
               meet: 'Gibson Invitational',
               meetDate: 'Apr 21, 2022',
               wind: '3.9'
@@ -154,7 +155,7 @@ export class SeasonService {
               name: 'Hackett, Aaron',
               year: 'JR-3',
               team: 'Connecticut',
-              value: '10.62',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '2.7'
@@ -382,7 +383,7 @@ export class SeasonService {
           ]
         }
     ]
-    return data2;
+    return dataset;
     }
 
     setSeasons() {

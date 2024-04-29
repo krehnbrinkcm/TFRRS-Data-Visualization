@@ -15,7 +15,7 @@ import Scraper from '../../../../web-scraper/index.js'
 
 export class SeasonsComponent implements OnInit{
 
-  dataset = [];
+  dataset = this.service.setEventData();
   seasArr: Array<seasonObj> = [];
   seasons: Array<seasonObj> = [];
   data2 = [{}];
@@ -82,29 +82,13 @@ onEventSelectionChange(event: any, stepper: MatStepper) {
   }
 
   addToDataset() {
-    console.log("works")
-  }
-
-
-
-  convertDataToDataset(data: any): { name: string; series: any }[] {
-    const dataset = {
-        name: "example name",
-        series: data.map((record: any) => {
-            return {
-                name: record.name,
-                value: record.value
-            };
-        })
+    const toAdd = {
+      name: "hello",
+      series: this.eventVar
     };
-
-    return [dataset];
-}
-
-  
-
-   
-
-
+    // Create a new array by concatenating the existing dataset with the new data
+    this.dataset = [toAdd];
+    console.log(this.dataset);
+  }
 
 }
