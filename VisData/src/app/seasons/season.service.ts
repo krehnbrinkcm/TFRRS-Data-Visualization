@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, from } from "rxjs";
 import * as  scraperFunctions from '../../../../web-scraper/index.js'
 import Confs from '../../../../web-scraper/confs'
+import Events from '../../../../web-scraper/events'
 
 export interface seasonObj {
     season: string,
@@ -25,6 +26,7 @@ export class SeasonService {
     //}
 
     confs = new Confs();
+    events = new Events()
 
     getConf(index: number){
         if(index === -1){
@@ -87,6 +89,15 @@ export class SeasonService {
             return this.confs.arr027();
         }
     }
+
+    getEv(link : String, ev: number){
+      if(link == "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List" && ev == 1){
+          return this.events.httpstftfrrsorglists3857BIG_EAST_Outdoor_Performance_List1();
+      } 
+       else {
+          return this.events.httpstftfrrsorglists3857BIG_EAST_Outdoor_Performance_List1();;
+      }
+  }
 
     setEventData() {
         let data2 = [

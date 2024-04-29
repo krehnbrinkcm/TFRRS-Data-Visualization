@@ -39,7 +39,7 @@ export class SeasonsComponent implements OnInit{
 
   seasonVar = ""
   conferenceVar = ""
-  eventVar = ""
+  eventVar: any
 
   //dataset = this.convertDataToDataset(this.data2)
   
@@ -63,7 +63,12 @@ onConferenceSelectionChange(event: any, stepper: MatStepper) {
 
 onEventSelectionChange(event: any, stepper: MatStepper) {
     this.eventVar = event.value;
+    console.log(event.value);
+    if (event.value == "100 meters") {
+      this.eventVar = this.service.getEv(this.conferenceVar,1);
+    }
     this.selectionsMade();
+    console.log(this.eventVar);
     stepper.next();
 }
 

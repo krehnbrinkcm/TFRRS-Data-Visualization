@@ -230,8 +230,13 @@ async function scrapeConfEvent(link,ev) {
             })
     })
 
+    let charsReplace = /[/:.]/g;
 
-    console.log(athleteArray)
+    console.log(link.replace(charsReplace,"") + ev + "() {");
+    console.log("let arr = ");
+    console.log(athleteArray);
+    console.log("return arr;}");
+
 }
 
 const links =
@@ -11402,7 +11407,7 @@ const links =
   }
 ];
 
-module.exports = links;
+//module.exports = links;
 
 
 
@@ -11418,4 +11423,4 @@ module.exports = links;
 
 const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
 
-scrapeConfPerformanceList(link)
+scrapeConfEvent(link, 1)
