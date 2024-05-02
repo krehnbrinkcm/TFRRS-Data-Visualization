@@ -92,23 +92,28 @@ export class SeasonService {
 
     getEv(link : String, ev: number){
       if(link == "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List" && ev == 1){
+        console.log("INHERE");
           return this.events.httpstftfrrsorglists3857BIG_EAST_Outdoor_Performance_List1();
       } 
-       else {
-        console.log("ELSEELSEELSEELSE");
-          return this.events.httpstftfrrsorglists3857BIG_EAST_Outdoor_Performance_List1();;
+       else if (link == "https://tf.tfrrs.org/lists/3849/Sun_Belt_Outdoor_Performance_List" && ev == 1) {
+        console.log("SUNBELTLINK")
+          return this.events.httpstftfrrsorglists3849Sun_Belt_Outdoor_Performance_List1();
+      }
+      else {
+        console.log("ELSE REACHED");
+        return this.events.httpstftfrrsorglists3849Sun_Belt_Outdoor_Performance_List1()
       }
   }
 
     setEventData() {
         let dataset = [
             {
-              name: "Big East Men 100 Meter Dash",
+              name: "Legend",
               series: [
               {
               event: '100 Meters\n        (Men)',
-              rank: '1',
-              name: 'Kwaateng, Richmond',
+              name: '1',
+              athName: 'Kwaateng, Richmond',
               year: 'SO-2',
               team: 'Connecticut',
               value: '0',
@@ -118,30 +123,30 @@ export class SeasonService {
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '2',
-              name: "O'Brien, Joseph",
+              name: '2',
+              athName: "O'Brien, Joseph",
               year: 'SO-2',
               team: 'Connecticut',
-              value: '10.40',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '1.2'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '3',
-              name: 'Paige, Joshua',
+              name: '3',
+              athName: 'Paige, Joshua',
               year: 'SO-2',
               team: 'Georgetown',
-              value: '10.45',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '1.2'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '4',
-              name: 'Attucks, Cameron',
+              name: '4',
+              athName: 'Attucks, Cameron',
               year: 'SO-2',
               team: 'DePaul',
               value: '0',
@@ -151,8 +156,8 @@ export class SeasonService {
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '5',
-              name: 'Hackett, Aaron',
+              name: '5',
+              athName: 'Hackett, Aaron',
               year: 'JR-3',
               team: 'Connecticut',
               value: '0',
@@ -162,220 +167,220 @@ export class SeasonService {
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '5',
-              name: 'Kane, Isaac',
+              name: '5',
+              athName: 'Kane, Isaac',
               year: 'SO-2',
               team: 'Butler',
-              value: '10.62',
+              value: '0',
               meet: '2022 Indiana Invitational',
               meetDate: 'Apr 22, 2022',
               wind: '3.8'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '7',
-              name: 'Marshall, Myles',
+              name: '7',
+              athName: 'Marshall, Myles',
               year: 'SO-2',
               team: 'DePaul',
-              value: '10.65',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '2.7'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '8',
-              name: 'Thompson, Josiah',
+              name: '8',
+              athName: 'Thompson, Josiah',
               year: 'JR-3',
               team: 'Connecticut',
-              value: '10.68',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '1.2'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '9',
-              name: 'Cole, Dominic',
+              name: '9',
+              athName: 'Cole, Dominic',
               year: 'FR-1',
               team: 'DePaul',
-              value: '10.69',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '2.7'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '10',
-              name: 'Pitt, Christopher',
+              name: '10',
+              athName: 'Pitt, Christopher',
               year: 'SO-2',
               team: 'Georgetown',
-              value: '10.71',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '1.2'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '11',
-              name: 'Bradley, Ben',
+              name: '11',
+              athName: 'Bradley, Ben',
               year: 'FR-1',
               team: 'Butler',
-              value: '10.77',
+              value: '0',
               meet: 'Sycamore Open',
               meetDate: 'Apr 30, 2022',
               wind: '3.9'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '12',
-              name: 'Mahony, Conor',
+              name: '12',
+              athName: 'Mahony, Conor',
               year: 'SO-2',
               team: 'Connecticut',
-              value: '10.80',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '2.7'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '13',
-              name: 'Torney, Jordan',
+              name: '13',
+              athName: 'Torney, Jordan',
               year: 'SR-4',
               team: 'Connecticut',
-              value: '10.93',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '0.6'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '14',
-              name: 'Bennett, Lee',
+              name: '14',
+              athName: 'Bennett, Lee',
               year: 'SO-2',
               team: 'Xavier (Ohio)',
-              value: '10.97',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '1.2'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '15',
-              name: 'Elder, Jack',
+              name: '15',
+              athName: 'Elder, Jack',
               year: 'SO-2',
               team: 'Butler',
-              value: '11.00',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '0.6'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '15',
-              name: 'Troup, Michael',
+              name: '16',
+              athName: 'Troup, Michael',
               year: 'SR-4',
               team: 'Villanova',
-              value: '11.00',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '2.7'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '17',
-              name: 'Debelak, Zach',
+              name: '17',
+              athName: 'Debelak, Zach',
               year: 'JR-3',
               team: 'DePaul',
-              value: '11.03',
+              value: '0',
               meet: 'Gibson Invitational',
               meetDate: 'Apr 21, 2022',
               wind: '4.0'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '18',
-              name: 'Bendel, Daniel',
+              name: '18',
+              athName: 'Bendel, Daniel',
               year: 'SR-4',
               team: 'Marquette',
-              value: '11.04',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '2.7'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '19',
-              name: 'Wright, Julian',
+              name: '19',
+              athName: 'Wright, Julian',
               year: 'SO-2',
               team: 'Marquette',
-              value: '11.06',
+              value: '0',
               meet: 'Pacific Coast Invitational 2022',
               meetDate: 'Apr 14, 2022',
               wind: '3.5'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '20',
-              name: 'Grosse, Benjamin',
+              name: '20',
+              athName: 'Grosse, Benjamin',
               year: 'SR-4',
               team: 'Connecticut',
-              value: '11.16',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '0.6'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '21',
-              name: 'Johnson, Jeremy',
+              name: '21',
+              athName: 'Johnson, Jeremy',
               year: 'SR-4',
               team: 'Xavier (Ohio)',
-              value: '11.36',
+              value: '0',
               meet: 'Jesse Owens Track Classic',
               meetDate: 'Apr 22, 2022',
               wind: '-1.0'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '22',
-              name: 'Heller, Brady',
+              name: '22',
+              athName: 'Heller, Brady',
               year: 'JR-3',
               team: 'Marquette',
-              value: '11.42',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '0.6'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '22',
-              name: 'Williams, Julian',
+              name: '22',
+              athName: 'Williams, Julian',
               year: 'FR-1',
               team: 'Georgetown',
-              value: '11.42',
+              value: '0',
               meet: 'Virginia Challenge',
               meetDate: 'Apr 22, 2022',
               wind: '-1.7'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '24',
-              name: 'Werven, Simon',
+              name: '24',
+              athName: 'Werven, Simon',
               year: 'SO-2',
               team: 'Marquette',
-              value: '11.44',
+              value: '0',
               meet: 'BIG EAST Outdoor Track & Field Championships',
               meetDate: 'May 13, 2022',
               wind: '0.6'
             },
             {
               event: '100 Meters\n        (Men)',
-              rank: '25',
-              name: 'Nations, Gus',
+              name: '25',
+              athName: 'Nations, Gus',
               year: 'JR-3',
               team: 'Xavier (Ohio)',
-              value: '11.46',
+              value: '0',
               meet: 'Jesse Owens Track Classic',
               meetDate: 'Apr 22, 2022',
               wind: '3.0'
