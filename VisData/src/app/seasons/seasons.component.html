@@ -9,7 +9,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Select Season</mat-label>
                 <mat-select (selectionChange)="onSeasonSelectionChange($event, stepper)">
-                    <mat-option *ngFor="let season of seasons" [value]="season.index">{{ season.season }}</mat-option>
+                    <mat-option *ngFor="let season of seasons" [value]="{ index: season.index, season: season.season }">{{ season.season }}</mat-option>
                 </mat-select>
             </mat-form-field>
           </ng-template>
@@ -20,7 +20,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Select Conference</mat-label>
                 <mat-select (selectionChange)="onConferenceSelectionChange($event, stepper)">
-                    <mat-option *ngFor="let conf of confs" [value]="conf.link">{{ conf.conf }}</mat-option>
+                    <mat-option *ngFor="let conf of confs" [value]="{link : conf.link, name : conf.conf}">{{ conf.conf }}</mat-option>
                 </mat-select>
             </mat-form-field>
           </ng-template>
@@ -58,6 +58,17 @@
     [autoScale] = "true"
     [roundDomains]="true">
     </ngx-charts-line-chart>
+
+    <ng-template #tooltipTemplate let-model="model">
+      <div class="custom-tooltip">
+        <div><strong>{{ model.name }}</strong></div>
+        <div>{{ model.athName }}</div>
+        <div>{{ model.value }}</div>
+        <div>{{ model.meet }}</div>
+        <div>{{ model.meetDate }}</div>
+        <div>{{ model.wind }}</div>
+      </div>
+    </ng-template>
 </mat-card>
 
 </div>

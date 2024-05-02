@@ -199,6 +199,8 @@ async function scrapeConfEvent(link,ev) {
     //array test to scrape names
     const athleteArray = []
 
+    var i = ev;
+
     //fill athlete array
     $(".panel-body").find(".row:eq(" + ev + ")").each((index, element2) => {
         const event = $(element2).find(".font-weight-500").text().trim()
@@ -216,17 +218,18 @@ async function scrapeConfEvent(link,ev) {
 
                 const athlete = {
                     event: event,
-                    rank: rank,
-                    name: name,
+                    name: i,
+                    athName: name,
                     year: year,
                     team: team,
-                    time: time,
+                    value: time,
                     meet: meet,
                     meetDate: meetDate,
                     wind: wind
                 }
 
                 athleteArray.push(athlete)
+                i++
             })
     })
 
@@ -11421,6 +11424,40 @@ const links =
 
 //console.log(links)
 
-const link = "https://tf.tfrrs.org/lists/3857/BIG_EAST_Outdoor_Performance_List"
+//const link = "https://tf.tfrrs.org/lists/3849/Sun_Belt_Outdoor_Performance_List"
 
-scrapeConfEvent(link, 1)
+//scrapeConfEvent(link, 1)
+
+for (var i = 0; i < 2; i++) {
+  console.log(links[i]);  //runs through all links(confs/seasons)
+  for(var j = 1; j < 6; j++) {
+    scrapeConfEvent(links[i].link,j)
+  }
+}
+
+//scrapeConfEvent(link,1)
+//scrapeConfEvent(link,1)
+
+
+
+//100 Meters (Men) - 1
+//100 Meters (Women) - 2
+//200 Meters (Men) - 3
+//200 Meters (Women)
+//400 Meters (Men)
+//400 Meters (Women)
+//800 Meters (Men)
+//800 Meters (Women)
+//1500 Meters (Men)
+//1500 Meters (Women)
+//5000 Meters (Men)
+//5000 Meters (Women)
+//10,000 Meters (Men)
+//10,000 Meters (Women)
+//100 Hurdles (Women)
+//110 Hurdles (Men)
+//400 Hurdles (Men)
+//400 Hurdles (Women)
+//3000 Steeplechase (Men)
+//3000 Steeplechase (Women)
+
