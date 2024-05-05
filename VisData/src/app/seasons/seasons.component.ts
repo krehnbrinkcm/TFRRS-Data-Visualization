@@ -53,8 +53,9 @@ export class SeasonsComponent implements OnInit{
 
   onSeasonSelectionChange(event: any, stepper: MatStepper) {
     this.seasonVar = event.value.season;
-    //console.log(event.value);
+    console.log(event.value.index);
     this.confs = this.service.getConf(event.value.index);
+    console.log(this.confs);
     this.selectionsMade();
     stepper.next();
 }

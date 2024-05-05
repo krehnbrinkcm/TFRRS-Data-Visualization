@@ -3,8 +3,8 @@ import { NgForm } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, from } from "rxjs";
 import * as  scraperFunctions from '../../../../web-scraper/index.js'
-import Confs from '../../../../web-scraper/confs'
-import Events from '../../../../web-scraper/events'
+import Confs from './confs'
+import Events from './events'
 
 export interface seasonObj {
     season: string,
